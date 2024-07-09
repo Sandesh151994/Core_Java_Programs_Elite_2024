@@ -1,57 +1,29 @@
-import java.util.Scanner;
 class BinarySearch
 {
-	
-	public static void main(String[] args) {
-		
-		Scanner sc= new Scanner(System.in);
+   public static void main(String args[])
+   {
 
-		System.out.println("ENter the size of an array");
-		int size=sc.nextInt();
 
-		int arr[]=new int[size];
+      int arr[]={12,13,14,15};
+      int first=0,last=arr.length-1;
 
-		System.out.print("Enter the elements of an array ");
-
-		for (int i=0;i<arr.length ;i++ ) {
-
-			System.out.println("For index "+i);
-
-			arr[i]=sc.nextInt();
-			
-		}
-
-		int low=0,high=arr.length-1;
-
-		System.out.println("Enter the key value");
-		int key= sc.nextInt();
-		
-
-		while(low<=high)
-		{
-			
-			int mid=(low+high)/2;
-
-			if(arr[mid]<key)
-			{
-				low=low+1;
-			}
-			else if(arr[mid]==key)
-			{
-				System.out.println(key +" found at : "+mid);
-				break;
-			}
-			else
-			{
-				high=high-1;
-			}
-
-		}
-
-		if(low>high)
-		{
-
-		System.out.println(key+" Not Found");	
-	}
-		}
+      int key=16;
+   int mid = (first + last)/2;  
+   while( first <= last ){  
+      if ( arr[mid] < key ){  
+        first = mid + 1;     
+      }else if ( arr[mid] == key ){  
+        System.out.println("Element is found at index: " + mid);  
+        break;  
+      }else{  
+         last = mid - 1;  
+      }  
+      mid = (first + last)/2;  
+   }  
+   if ( first > last ){  
+      System.out.println("Element is not found!");  
+       }  
+   }
 }
+
+ 
